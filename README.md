@@ -1,4 +1,4 @@
-# cat-facts
+# blog-stuff-vue
 
 ## Project setup
 ```
