@@ -106,7 +106,7 @@
                         this.request.failed = true;
                         console.error(reason);
                     })
-                    .finally(() => this.request.loading = true);
+                    .finally(() => this.request.loading = false);
             },
             navigateBack() {
                 this.$router.push('/posts');
