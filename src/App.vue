@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <!-- App Bar -->
+    <v-app-bar app clipped-left dark color="primary">
+      <!-- Home Button -->
+      <v-app-bar-nav-icon @click="$router.push('/')">
+        <v-icon>mdi-home</v-icon>
+      </v-app-bar-nav-icon>
+
+      <!-- App Title -->
+      <v-toolbar-title>Blog Stuff</v-toolbar-title>
+    </v-app-bar>
+
+    <!-- Page Content -->
+    <v-content>
+      <v-container fluid fill-height align-start>
+        <transition name="fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+  export default {
+    name: 'App',
 
-export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+    data: () => ({
+    })
+  };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style scoped>
+  .fade-enter-active, .fade-leave-active {
+    transition: opacity .1s ease;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+  }
 </style>
