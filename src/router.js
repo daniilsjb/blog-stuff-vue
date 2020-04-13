@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import PostOverview from "./views/post-overview/PostOverviewView";
-import DetailedPostOverview from "./views/post/PostView";
-import DetailedUserOverview from "./views/user/UserView";
+import PostOverviewView from "./views/post-overview/PostOverviewView";
+import PostView from "./views/post/PostView";
+import UserView from "./views/user/UserView";
 
 Vue.use(Router);
 
@@ -16,17 +16,17 @@ export default new Router({
         {
             path: '/posts',
             name: 'posts',
-            component: PostOverview
+            component: PostOverviewView
         },
         {
             path: '/posts/:id',
             name: 'post',
-            component: DetailedPostOverview
+            component: PostView
         },
         {
           path: '/users/:id',
           name: 'user',
-          component: DetailedUserOverview
+          component: UserView
         },
         {
             path: '*',
