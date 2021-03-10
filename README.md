@@ -1,4 +1,4 @@
-# blog-stuff-vue
+# vue-sample
 
 ## Project setup
 ```
